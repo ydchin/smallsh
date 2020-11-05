@@ -1,0 +1,24 @@
+﻿  Build command not configured, skipping.
+  Invoking 'make', working directory: '/nfs/stak/users/chiny/vsprojects/smallsh'
+  gcc --std=gnu99 -g -Wall  -c -o build/main.o main.c
+  main.c: In function ‘options’:
+  main.c:240:3: warning: implicit declaration of function ‘options2’ [-Wimplicit-function-declaration]
+     options2(sizeArray);
+     ^
+  main.c: At top level:
+  main.c:250:6: warning: conflicting types for ‘options2’ [enabled by default]
+   void options2(int sizeArray) {
+        ^
+  main.c:240:3: note: previous implicit declaration of ‘options2’ was here
+     options2(sizeArray);
+     ^
+  main.c: In function ‘options2’:
+  main.c:368:2: warning: passing argument 2 of ‘waitpid’ makes pointer from integer without a cast [enabled by default]
+    while ((spawnpid = waitpid(-1, childExitMethod, WNOHANG)) > 0) {
+    ^
+  In file included from main.c:15:0:
+  /usr/include/sys/wait.h:137:16: note: expected ‘int *’ but argument is of type ‘int’
+   extern __pid_t waitpid (__pid_t __pid, int *__stat_loc, int __options);
+                  ^
+  gcc -o ./smallsh build/main.o  
+  
